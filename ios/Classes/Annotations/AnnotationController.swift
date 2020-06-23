@@ -50,17 +50,17 @@ class AnnotationController: NSObject {
         annotationView!.canShowCallout = true
         annotationView!.alpha = CGFloat(annotation.alpha ?? 1.00)
         annotationView!.isDraggable = annotation.isDraggable ?? false
+        annotationView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         return annotationView!
     }
-    
+
     public func annotationsToAdd(annotations :NSArray) {
         for annotation in annotations {
             let annotationData :Dictionary<String, Any> = annotation as! Dictionary<String, Any>
             addAnnotation(annotationData: annotationData)
         }
     }
-    
-    
+
     public func annotationsToChange(annotations: NSArray) {
         let oldAnnotations :[MKAnnotation] = mapView.annotations
         for annotation in annotations {
@@ -75,14 +75,14 @@ class AnnotationController: NSObject {
                             } else {
                                 oldFlutterAnnotation.wasDragged = false
                             }
-                        } 
+                        }
                     }
                 }
             }
         }
     }
-    
-    
+
+
     public func annotationsIdsToRemove(annotationIds: NSArray) {
         for annotationId in annotationIds {
             if let _annotationId :String = annotationId as? String {
@@ -90,16 +90,22 @@ class AnnotationController: NSObject {
             }
         }
     }
-    
-    
+
+
     public func onAnnotationClick(annotation :MKAnnotation) {
         if let flutterAnnotation :FlutterAnnotation = annotation as? FlutterAnnotation {
             flutterAnnotation.wasDragged = true
             channel.invokeMethod("annotation#onTap", arguments: ["annotationId" : flutterAnnotation.id])
         }
     }
-    
-    
+
+    public func onInfoWindowClick(annotation :MKAnnotation) {
+        if let flutterAnnotation :FlutterAnnotation = annotation as? FlutterAnnotation {
+            flutterAnnotation.wasDragged = true
+            channel.invokeMethod("infoWindow#onTap", arguments: ["annotationId" : flutterAnnotation.id])
+        }
+    }
+
     private func removeAnnotation(id: String) {
         for annotation in mapView.annotations {
             if let flutterAnnotation :FlutterAnnotation = annotation as? FlutterAnnotation {

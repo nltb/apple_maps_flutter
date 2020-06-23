@@ -84,6 +84,12 @@ public class AppleMapController : NSObject, FlutterPlatformView, MKMapViewDelega
         }
     }
     
+    public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation :FlutterAnnotation = view.annotation as? FlutterAnnotation  {
+            annotationController.onInfoWindowClick(annotation: annotation)
+        }
+    }
+
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
