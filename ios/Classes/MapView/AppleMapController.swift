@@ -81,7 +81,20 @@ public class AppleMapController : NSObject, FlutterPlatformView, MKMapViewDelega
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)  {
         if let annotation :FlutterAnnotation = view.annotation as? FlutterAnnotation  {
             annotationController.onAnnotationClick(annotation: annotation)
+
+            if #available(iOS 9.0, *) {
+                let gesture = UITapGestureRecognizer(target: self, action: #selector(userDidTapAnnotationCalloutView(_:)))
+                view.addGestureRecognizer(gesture)
+            }
         }
+    }
+
+    @objc
+    private func userDidTapAnnotationCalloutView(_ sender: UITapGestureRecognizer) {
+                guard let flutterAnnotation = (sender.view as? MKAnnotationView)?.annotation as? FlutterAnnotation else { return }
+                channel.invokeMethod("infoWindow#onTap", arguments: ["annotationId" : flutterAnnotation.id])
+         sender.view?.gestureRecognizers?.forEach(sender.view!.removeGestureRecognizer)
+
     }
     
     public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

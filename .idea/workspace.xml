@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ea05d78-0c86-4c92-8a53-b42262a81a85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple_maps_flutter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/apple_maps_flutter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/Annotations/AnnotationController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/Annotations/AnnotationController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/MapView/AppleMapController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/MapView/AppleMapController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +38,39 @@
       <option name="presentableId" value="Default" />
       <updated>1592950401962</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add info window details button on tap callback">
+      <created>1592951272573</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592951272573</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add info window details button on tap callback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add info window details button on tap callback" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="412" y="130" key="CommitChangelistDialog2" timestamp="1592951272374">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="412" y="130" key="CommitChangelistDialog2/1680.23.1366.1001/0.23.1680.1027@0.23.1680.1027" timestamp="1592951272374" />
+    <state x="440" y="276" key="Vcs.Push.Dialog.v2" timestamp="1592951275632">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="440" y="276" key="Vcs.Push.Dialog.v2/1680.23.1366.1001/0.23.1680.1027@0.23.1680.1027" timestamp="1592951275632" />
   </component>
 </project>
